@@ -1,0 +1,56 @@
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.wrapper{
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+.text-center{
+    text-align: center;
+}
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/* CSS for menu */
+.menu{
+    border-bottom: 1px solid gray;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(12, 136, 12);
+}
+.menu ul li a:hover{
+    color: rgb(6, 66, 6);
+}
+
+/* CSS for main-content */
+.main-content{
+    background-color: rgb(234, 238, 235);
+    padding: 3% 0;
+}
+.col-4{
+    width: 20%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+/* CSS for footer */
+.footer{
+    background-color: rgb(5, 104, 5);
+    color: white;
+}
