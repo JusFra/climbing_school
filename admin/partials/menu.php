@@ -17,6 +17,7 @@
                     <li><a href="manage-category.php">Categories</a></li>
                     <li><a href="manage-course.php">Courses</a></li>
                     <li><a href="Manage-reservation.php">Reservation</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>
