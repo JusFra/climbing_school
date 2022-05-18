@@ -1,3 +1,5 @@
+<?php include('../config/constants.php'); ?>
+
 <html>
     <head>
         <title>Climbing School Website - Home Page</title>
