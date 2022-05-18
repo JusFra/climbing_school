@@ -17,6 +17,11 @@
                     echo $_SESSION['login'];
                     unset($_SESSION['login']);
                 }
+                if(isset($_SESSION['no-login-message']))
+                {
+                    echo $_SESSION['no-login-message'];
+                    unset($_SESSION['no-login-message']);
+                }
             ?>
 
             <form action="" method="POST" class="text-center">
@@ -51,11 +56,14 @@
         if($count==1)
         {
             $_SESSION['login'] = "<div class='success text-center'>Login successfull.</div>";
+            $_SESSION['user'] = $username;
+
             header('location:'.SITEURL.'admin/');
         }
         else
         {
             $_SESSION['login'] = "<div class='error text-center'>Username or password did not match.</div>";
+            header('location:'.SITEURL.'admin/login.php');
         }
 
     }
