@@ -6,47 +6,118 @@
                 <h1>Manage Category</h1>
                 <br><br>
 
-                <a href="#" class="btn-primary">Add admin</a>
+                <?php
+                    if(isset($_SESSION['add']))
+                    {
+                        echo $_SESSION['add'];
+                        unset($_SESSION['add']);
+                    }
+                    if(isset($_SESSION['remove']))
+                    {
+                        echo $_SESSION['remove'];
+                        unset($_SESSION['remove']);
+                    }
+                    if(isset($_SESSION['delete']))
+                    {
+                        echo $_SESSION['delete'];
+                        unset($_SESSION['delete']);
+                    }
+                    if(isset($_SESSION['no-category-found']))
+                    {
+                        echo $_SESSION['no-category-found'];
+                        unset($_SESSION['no-category-found']);
+                    }
+                    if(isset($_SESSION['update']))
+                    {
+                        echo $_SESSION['update'];
+                        unset($_SESSION['update']);
+                    }
+                    if(isset($_SESSION['upload']))
+                    {
+                        echo $_SESSION['upload'];
+                        unset($_SESSION['upload']);
+                    }
+                    if(isset($_SESSION['failed-remove']))
+                    {
+                        echo $_SESSION['failed-remove'];
+                        unset($_SESSION['failed-remove']);
+                    }
+                ?>
+                <br><br>
+
+                <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add category</a>
                 <br><br>
 
                 <table class="tbl-full">
                     <tr>
                         <th>S. N.</th>
-                        <th>Full Name</th>
-                        <th>User Name</th>
-                        <th>Licencja</th>
+                        <th>Title</th>
+                        <th>Image</th>
+                        <th>Active</th>
                         <th>Actions</th>
                     </tr>
-                    <tr>
-                        <td>1. </td>
-                        <td>Justyna Frankiewicz</td>
-                        <td>JusFra</td>
-                        <td>aktywna</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. </td>
-                        <td>Justyna Frankiewicz</td>
-                        <td>JusFra</td>
-                        <td>nieaktywna</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3. </td>
-                        <td>Justyna Frankiewicz</td>
-                        <td>JusFra</td>
-                        <td>aktywna</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
-                        </td>
-                    </tr>
+
+                    <?php
+                        $sql = "SELECT * FROM tbl_category";
+                        $res = mysqli_query($conn, $sql);
+
+                        if($res)
+                        {
+                            $count = mysqli_num_rows($res);
+
+                            $sn = 1;
+
+                            if($count > 0)
+                            {
+                                while($rows=mysqli_fetch_assoc($res))
+                                {
+                                    $id = $rows['id'];
+                                    $title = $rows['title'];
+                                    $image_name = $rows['image_name'];
+                                    $active = $rows['active'];
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $sn++; ?></td>
+                                            <td><?php echo $title; ?></td>
+                                            <td>
+                                                <?php 
+                                                    //echo $image;
+                                                    if($image_name!="")
+                                                    {
+                                                        ?>
+
+                                                        <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px">
+
+                                                        <?php
+                                                    } 
+                                                    else
+                                                    {
+                                                        echo "<div class='error'>Image not added.</div>";
+                                                    }
+                                                ?>
+                                            </td>
+                                            <td><?php echo $active; ?></td>
+                                            <td>
+                                                <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-secondary">Update Category</a>
+                                                <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
+                                            </td>
+                                        </tr>
+
+                                    <?php
+                                }    
+                            }
+                            else
+                            {
+                                ?>
+                                <tr>
+                                    <td colspan="5"><div class="error">No category added.</div></td>
+                                </tr>
+                                <?php
+
+                            }
+                        }
+                    ?>
+
                 </table>
 
                 <div class="clearfix"></div>
