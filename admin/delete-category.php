@@ -15,7 +15,7 @@
             if($remove==false)
             {
                 $_SESSION['remove'] = "Failed to remove category image.";
-                header('location:'.SITEURL.'admin/category-manage.php');
+                header('location:'.SITEURL.'admin/manage-category.php');
                 die();
             }
         }

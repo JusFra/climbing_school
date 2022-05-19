@@ -6,7 +6,7 @@
                 <h1>Manage Admin</h1>
                 <br><br>
 
-                <a href="add-admin.php" class="btn-primary">Add admin</a>
+                <a href="<?php echo SITEURL; ?>admin/add-admin.php" class="btn-primary">Add admin</a>
                 <br><br>
 
                 <?php
