@@ -53,6 +53,7 @@
                     <tr>
                         <th>S. N.</th>
                         <th>Title</th>
+                        <th>Date</th>
                         <th>Description</th>
                         <th>Price</th>
                         <th>Image</th>
@@ -74,6 +75,8 @@
                             {
                                 $id = $row['id'];
                                 $title = $row['title'];
+                                $date_start = DateTime::createFromFormat('Y-m-d', $row['date_start']);
+                                $date_end = DateTime::createFromFormat('Y-m-d', $row['date_end']);
                                 $description = $row['description'];
                                 $price = $row['price'];
                                 $image_name = $row['image_name'];
@@ -84,6 +87,7 @@
                             <tr>
                                 <td><?php echo $sn++; ?></td>
                                 <td><?php echo $title; ?></td>
+                                <td><?php echo date_format($date_start, 'd.m'); ?> - <?php echo date_format($date_end, 'd.m.Y'); ?></td>
                                 <td><?php echo $description; ?></td>
                                 <td><?php echo $price; ?></td>
                                 <td>

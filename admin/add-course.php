@@ -22,6 +22,14 @@
                     <td><input type="text" name="title"></td>
                 </tr> 
                 <tr>
+                    <td>Start date: </td>
+                    <td><input type="date" name="date_start"></td>
+                </tr> 
+                <tr>
+                    <td>End date: </td>
+                    <td><input type="date" name="date_end"></td>
+                </tr> 
+                <tr>
                     <td>Description: </td>
                     <td>
                         <textarea name="description" cols="30" rows="5"></textarea>
@@ -89,6 +97,8 @@
     if(isset($_POST['submit']))
     {
         $title = $_POST['title'];
+        $date_start = $_POST['date_start'];
+        $date_end = $_POST['date_end'];
         $description = $_POST['description'];
         $price = $_POST['price'];
         $category = $_POST['category'];
@@ -132,6 +142,8 @@
 
         $sql2 = "INSERT INTO tbl_course SET
             title = '$title',
+            date_start='$date_start',
+            date_end='$date_end',
             description = '$description',
             price = $price,
             image_name = '$image_name',

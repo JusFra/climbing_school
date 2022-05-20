@@ -16,14 +16,16 @@
                 $count1 = mysqli_num_rows($res1);
                 if($count1==1)
                 {
-                    $rows1 = mysqli_fetch_assoc($res1);
+                    $row1 = mysqli_fetch_assoc($res1);
 
-                    $title = $rows1['title'];
-                    $description = $rows1['description'];
-                    $price = $rows1['price'];
-                    $current_image = $rows1['image_name'];
-                    $current_category = $rows1['category_id'];
-                    $active = $rows1['active'];
+                    $title = $row1['title'];
+                    $date_start = $row1['date_start'];
+                    $date_end = $row1['date_end'];            
+                    $description = $row1['description'];
+                    $price = $row1['price'];
+                    $current_image = $row1['image_name'];
+                    $current_category = $row1['category_id'];
+                    $active = $row1['active'];
                 }
                 else
                 {
@@ -45,6 +47,14 @@
                 <tr>
                     <td>Title: </td>
                     <td><input type="text" name="title" value="<?php echo $title; ?>"></td>
+                </tr>
+                <tr>
+                    <td>Start date: </td>
+                    <td><input type="date" name="date_start" value="<?php echo $date_start; ?>"></td>
+                </tr>
+                <tr>
+                    <td>End date: </td>
+                    <td><input type="date" name="date_end" value="<?php echo $date_end; ?>"></td>
                 </tr>
                 <tr>
                     <td>Description: </td>
@@ -133,6 +143,8 @@
             {
                 $id = $_POST['id'];
                 $title = $_POST['title'];
+                $date_start = $_POST['date_start'];
+                $date_end = $_POST['date_end'];
                 $description = $_POST['description'];
                 $price = $_POST['price'];
                 $current_image = $_POST['current_image'];
@@ -185,6 +197,8 @@
 
                 $sql2 = "UPDATE tbl_course SET
                     title='$title',
+                    date_start='$date_start',
+                    date_end='$date_end',
                     description='$description',
                     price=$price,
                     image_name='$image_name',
