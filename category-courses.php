@@ -82,7 +82,7 @@
                                         if($active=='Yes')
                                         {
                                             ?>
-                                            <a href="#" class="btn btn-primary">Order Now</a>
+                                            <a href="<?php echo SITEURL; ?>reservation.php?course_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
                                             <?php
                                         }
                                         else{

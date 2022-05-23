@@ -12,6 +12,14 @@
     </section>
     <!-- Courses search section ends here -->
 
+    <?php
+        if(isset($_SESSION['order']))
+        {
+            echo $_SESSION['order'];
+            unset($_SESSION['order']);
+        }
+    ?>
+
     <!-- Categories section starts here -->
     <section class="categories">
         <div class="container">
@@ -110,7 +118,7 @@
                                 <p class="course-price"><?php echo $price; ?> zł</p>
                                 <p class="course-detail"><?php echo $description; ?></p>
                                 <br>
-                                <a href="#" class="btn btn-primary">Order now</a>
+                                <a href="<?php echo SITEURL; ?>reservation.php?course_id=<?php echo $id; ?>" class="btn btn-primary">Order now</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
