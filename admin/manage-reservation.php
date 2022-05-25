@@ -1,10 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-        <!-- Main Content Section --> 
-        <div class="main-content">
-            <div class="wrapper">
-                <h1>Manage Reservation</h1>
-                <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="data-table">
+            <div class="title">
+                <h2>Manage reservations</h2>
+            </div>
 
                 <?php
                     if(isset($_SESSION['no-reservation-found']))
@@ -19,7 +20,7 @@
                     }
                 ?>
 
-                <table class="tbl-full">
+                <table>
                     <tr>
                         <th>S. N.</th>
                         <th>Course name</th>
@@ -76,11 +77,11 @@
                                             }
                                             elseif($status=="Finished")
                                             {
-                                                echo "<label style='color: green;'>$status</label>";
+                                                echo "<label style='color: #58c67b;'>$status</label>";
                                             }
                                             else
                                             {
-                                                echo "<label style='color: red;'>$status</label>";
+                                                echo "<label style='color: #B80C09;'>$status</label>";
                                             }
                                         ?>
                                     </td>
@@ -89,7 +90,7 @@
                                     <td><?php echo $customer_email; ?></td>
 
                                     <td>
-                                        <a href="<?php echo SITEURL; ?>admin/update-reservation.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
+                                        <a href="<?php echo SITEURL; ?>admin/update-reservation.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update</a>
                                     </td>
                                 </tr>
 
@@ -107,9 +108,9 @@
                     ?>
                 </table>
 
-               
-                <div class="clearfix"></div>
             </div>
         </div>
+    </div>
+</div>
 
 <?php include('partials/footer.php'); ?>

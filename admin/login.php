@@ -7,35 +7,40 @@
     </head>
 
     <body>
-        <div class="login">
-            <h1 class="text-center">Login</h1>
-            <br><br>
+        <div class="content">
+            <div class="content-2">
+                <div class="form-table">
+                    <div class="title">
+                        <h1 class="text-center">Login</h1>
+                    </div>
+                    <br><br>
 
-            <?php
-                if(isset($_SESSION['login']))
-                {
-                    echo $_SESSION['login'];
-                    unset($_SESSION['login']);
-                }
-                if(isset($_SESSION['no-login-message']))
-                {
-                    echo $_SESSION['no-login-message'];
-                    unset($_SESSION['no-login-message']);
-                }
-            ?>
+                    <?php
+                        if(isset($_SESSION['login']))
+                        {
+                            echo $_SESSION['login'];
+                            unset($_SESSION['login']);
+                        }
+                        if(isset($_SESSION['no-login-message']))
+                        {
+                            echo $_SESSION['no-login-message'];
+                            unset($_SESSION['no-login-message']);
+                        }
+                    ?>
 
-            <form action="" method="POST" class="text-center">
-                Username: <br>
-                <input type="text" name="username"><br><br>
+                    <div class="login">
+                        <form action="" method="POST" class="text-center">
+                            Username: <br>
+                            <input type="text" name="username" class="input-field"><br><br>
 
-                Password: <br>
-                <input type="password" name="password"><br><br>
+                            Password: <br>
+                            <input type="password" name="password" class="input-field"><br><br>
 
-                <input type="submit" name="submit" value="Login" class="btn-primary">
-            </form>
-
-            <br><br>
-            <p class="text-center">Created by <a href="#">Justyna Frankiewicz</a></p>
+                            <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>    
+            </div>
         </div>
     </body>
 </html>
@@ -58,7 +63,7 @@
             $_SESSION['login'] = "<div class='success text-center'>Login successfull.</div>";
             $_SESSION['user'] = $username;
 
-            header('location:'.SITEURL.'admin/');
+            header('location:'.SITEURL.'admin/index.php');
         }
         else
         {

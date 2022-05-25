@@ -1,13 +1,14 @@
 <?php include('partials/menu.php'); ?>
 
-        <!-- Main Content Section --> 
-        <div class="main-content">
-            <div class="wrapper">
-                <h1>Manage Admin</h1>
-                <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="data-table">
+            <div class="title">
+                <h2>Manage admin</h2>
+                <a href="<?php echo SITEURL; ?>admin/add-admin.php" class="btn">Add Admin</a>
+            </div>
 
-                <a href="<?php echo SITEURL; ?>admin/add-admin.php" class="btn-primary">Add admin</a>
-                <br><br>
+            <br><br>
 
                 <?php
                     if(isset($_SESSION['add']))
@@ -42,17 +43,17 @@
                     }
                 ?>
 
-                <br><br><br>
-                <table class="tbl-full">
-                    <tr>
-                        <th>S. N.</th>
-                        <th>Full Name</th>
-                        <th>User Name</th>
-                        <th>License Number</th>
-                        <th>Valid</th>
-                        <th>Actions</th>
-                    </tr>
 
+            <table>
+                <tr>
+                    <th>S. N.</th>
+                    <th>Full Name</th>
+                    <th>User Name</th>
+                    <th>License Number</th>
+                    <th>Valid</th>
+                    <th>Actions</th>
+                </tr>
+                    
                     <?php
                         $sql = "SELECT * FROM tbl_admin";
                         $res = mysqli_query($conn, $sql);
@@ -82,9 +83,9 @@
                                         <td><?php echo $license; ?></td>
                                         <td><?php echo $valid; ?></td>
                                         <td>
-                                            <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change password</a>
-                                            <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                            <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn btn-primary">Change password</a>
+                                            <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update Admin</a>
+                                            <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete Admin</a>
                                         </td>
                                     </tr>
 
@@ -93,15 +94,18 @@
                             }
                             else
                             {
-
+                                ?>
+                                <tr>
+                                    <td colspan="5"><div class="error">No category added.</div></td>
+                                </tr>
+                                <?php
                             }
                         }
                     ?>
 
-                </table>
-               
-                <div class="clearfix"></div>
-            </div>
+            </table>
         </div>
+    </div>
+</div>
 
 <?php include('partials/footer.php'); ?>

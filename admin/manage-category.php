@@ -1,10 +1,12 @@
 <?php include('partials/menu.php'); ?>
 
-        <!-- Main Content Section --> 
-        <div class="main-content">
-            <div class="wrapper">
-                <h1>Manage Category</h1>
-                <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="data-table">
+            <div class="title">
+                <h2>Manage category</h2>
+                <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn">Add Category</a>
+            </div>
 
                 <?php
                     if(isset($_SESSION['add']))
@@ -45,10 +47,8 @@
                 ?>
                 <br><br>
 
-                <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add category</a>
-                <br><br>
 
-                <table class="tbl-full">
+                <table>
                     <tr>
                         <th>S. N.</th>
                         <th>Title</th>
@@ -98,8 +98,8 @@
                                             </td>
                                             <td><?php echo $active; ?></td>
                                             <td>
-                                                <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-secondary">Update Category</a>
-                                                <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
+                                                <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn btn-secondary">Update Category</a>
+                                                <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn btn-danger">Delete Category</a>
                                             </td>
                                         </tr>
 
@@ -120,8 +120,9 @@
 
                 </table>
 
-                <div class="clearfix"></div>
             </div>
         </div>
+    </div>
+</div>
 
 <?php include('partials/footer.php'); ?>

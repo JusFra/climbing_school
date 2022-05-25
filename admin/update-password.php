@@ -1,48 +1,42 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Change password</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Change password</h2>
+            </div>
 
-        <?php
-            if(isset($_GET['id']))
-            {
-                $id = $_GET['id'];
-            }
-        ?>
+            <?php
+                if(isset($_GET['id']))
+                {
+                    $id = $_GET['id'];
+                }
+            ?>
 
-        <form action="" method="POST">
-            <table class="tbl-30">
-                <tr>
-                    <td>Current Password: </td>
-                    <td>
-                        <input type="password" name="current_password">
-                    </td>
-                </tr>
-                <tr>
-                    <td>New Password: </td>
-                    <td>
-                        <input type="password" name="new_password">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Confirm password: </td>
-                    <td>
-                        <input type="password" name="confirm_password">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2">
-                        <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Change password" class="btn-secondary">
-                    </td>
-                </tr>
-
-            </table>
-        </form>
-
+            <form action="" method="POST">
+                <table>
+                    <tr>
+                        <td>Current Password: </td>
+                        <td><input type="password" class="input-field" name="current_password"></td>
+                    </tr>    
+                    <tr>
+                        <td>New Password: </td>
+                        <td><input type="password" class="input-field" name="new_password"></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm password: </td>
+                        <td><input type="password" class="input-field" name="confirm_password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                            <input type="submit" name="submit" value="Change password" class="input-field btn btn-primary">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </div>
 

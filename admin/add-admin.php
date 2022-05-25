@@ -1,9 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Admin</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Add new admin</h2>
+            </div>
 
         <?php
             if(isset($_SESSION['add']))
@@ -15,30 +17,30 @@
 
         <form action="" method="POST">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Full name: </td>
-                    <td><input type="text" name="full_name" placeholder="Enter Your Name"></td>
+                    <td><input type="text" name="full_name" class="input-field" placeholder="Enter Your Name"></td>
                 </tr>    
                 <tr>
                     <td>Username: </td>
-                    <td><input type="text" name="username" placeholder="Enter Your Username"></td>
+                    <td><input type="text" name="username" class="input-field" placeholder="Enter Your Username"></td>
                 </tr>
                 <tr>
                     <td>Password: </td>
-                    <td><input type="password" name="password" placeholder="Enter Your Password"></td>
+                    <td><input type="password" name="password" class="input-field" placeholder="Enter Your Password"></td>
                 </tr>
                 <tr>
                     <td>License Number: </td>
-                    <td><input type="text" name="license" placeholder="Enter Your License Number"></td>
+                    <td><input type="text" name="license" class="input-field" placeholder="Enter Your License Number"></td>
                 </tr>
                 <tr>
                     <td>License Valid: </td>
-                    <td><input type="date" name="valid" placeholder="Enter Your License Valid"></td>
+                    <td><input type="date" name="valid" class="input-field" placeholder="Enter Your License Valid"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Admin" class="input-field btn btn-primary">
                     </td>
                 </tr>
             </table>

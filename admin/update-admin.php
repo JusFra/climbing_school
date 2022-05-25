@@ -1,11 +1,13 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Admin</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Update admin</h2>
+            </div>
 
-        <?php
+            <?php
             $id = $_GET['id'];
             $sql = "SELECT * FROM tbl_admin WHERE id=$id";
             $res = mysqli_query($conn, $sql);
@@ -34,33 +36,34 @@
             }
         ?>
 
-        <form action="" method="POST">
+            <form action="" method="POST">
 
-            <table class="tbl-30">
-                <tr>
-                    <td>Full name: </td>
-                    <td><input type="text" name="full_name" value="<?php echo $full_name; ?>"></td>
-                </tr>    
-                <tr>
-                    <td>Username: </td>
-                    <td><input type="text" name="username" value="<?php echo $username; ?>"></td>
-                </tr>
-                <tr>
-                    <td>License Number: </td>
-                    <td><input type="text" name="license" value="<?php echo $license; ?>"></td>
-                </tr>
-                <tr>
-                    <td>License Valid: </td>
-                    <td><input type="date" name="valid" value="<?php echo $valid; ?>"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
-                    </td>
-                </tr>
-            </table>
-        </form>
+                <table>
+                    <tr>
+                        <td>Full name: </td>
+                        <td><input type="text" class="input-field" name="full_name" value="<?php echo $full_name; ?>"></td>
+                    </tr>    
+                    <tr>
+                        <td>Username: </td>
+                        <td><input type="text" class="input-field" name="username" value="<?php echo $username; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>License Number: </td>
+                        <td><input type="text" class="input-field" name="license" value="<?php echo $license; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td>License Valid: </td>
+                        <td><input type="date" class="input-field" name="valid" value="<?php echo $valid; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                            <input type="submit" name="submit" value="Update Admin" class="input-field btn btn-primary">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </div>
 

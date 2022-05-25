@@ -1,9 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Course</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Update Course</h2>
+            </div>
 
         <?php
 
@@ -43,28 +45,28 @@
 
         <form action="" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title: </td>
-                    <td><input type="text" name="title" value="<?php echo $title; ?>"></td>
+                    <td><input type="text" class="input-field" name="title" value="<?php echo $title; ?>"></td>
                 </tr>
                 <tr>
                     <td>Start date: </td>
-                    <td><input type="date" name="date_start" value="<?php echo $date_start; ?>"></td>
+                    <td><input type="date" class="input-field" name="date_start" value="<?php echo $date_start; ?>"></td>
                 </tr>
                 <tr>
                     <td>End date: </td>
-                    <td><input type="date" name="date_end" value="<?php echo $date_end; ?>"></td>
+                    <td><input type="date" class="input-field" name="date_end" value="<?php echo $date_end; ?>"></td>
                 </tr>
                 <tr>
                     <td>Description: </td>
                     <td>
-                        <textarea name="description" cols="30" rows="5"><?php echo $description; ?></textarea>
+                        <textarea name="description" class="input-field-area"><?php echo $description; ?></textarea>
                     </td>
                 </tr> 
                 <tr>
                     <td>Price: </td>
-                    <td><input type="number" name="price" value="<?php echo $price; ?>"></td>
+                    <td><input type="number" class="input-field" name="price" value="<?php echo $price; ?>"></td>
                 </tr>   
                 <tr>
                     <td>Current Image: </td>
@@ -87,13 +89,13 @@
                 <tr>
                     <td>New Image: </td>
                     <td>
-                        <input type="file" name="image">
+                        <input type="file" name="image" class="input-field-file">
                     </td>
                 </tr>
                 <tr>
                     <td>Category: </td>
                     <td>
-                        <select name="category">
+                        <select name="category" class="input-field">
                         <?php
                                 $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
                                 $res = mysqli_query($conn, $sql);
@@ -132,7 +134,7 @@
                     <td colspan="2">
                         <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Course" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Course" class="input-field btn btn-primary">
                     </td>
                 </tr>
             </table>
@@ -223,7 +225,7 @@
 
         ?>
 
-
+        </div>
     </div>
 </div>
 

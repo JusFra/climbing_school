@@ -1,9 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Category</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Add new category</h2>
+            </div>
 
         <?php
             if(isset($_SESSION['add']))
@@ -21,14 +23,14 @@
         
         <form action="" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title: </td>
-                    <td><input type="text" name="title"></td>
+                    <td><input type="text" name="title" class="input-field"></td>
                 </tr>    
                 <tr>
                     <td>Select Image: </td>
-                    <td><input type="file" name="image"></td>
+                    <td><input type="file" name="image" class="input-field-file"></td>
                 </tr>
                 <tr>
                     <td>Active: </td>
@@ -40,7 +42,7 @@
                 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Category" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Category" class="input-field btn btn-primary">
                     </td>
                 </tr>
             </table>

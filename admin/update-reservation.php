@@ -1,9 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Reservation</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Update reservation</h2>
+            </div>
 
         <?php
 
@@ -43,7 +45,7 @@
 
         <form action="" method="POST">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Customer name: </td>
                     <td><?php echo $customer_name; ?></td>
@@ -96,7 +98,7 @@
                 <tr>
                     <td>Status: </td>
                     <td>
-                        <select name="status">
+                        <select name="status" class="input-field">
                             <option <?php if($status=="Ordered"){ echo "selected"; } ?> value="Ordered">Ordered</option>
                             <option <?php if($status=="Confirmed"){ echo "selected"; } ?> value="Confirmed">Confirmed</option>
                             <option <?php if($status=="Cancelled"){ echo "selected"; } ?> value="Cancelled">Cancelled</option>
@@ -107,7 +109,7 @@
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Course" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Course" class="input-field btn btn-primary">
                     </td>
                 </tr>
 
@@ -138,13 +140,9 @@
                 }
             }
         ?>
-
+        </div>
     </div>
 </div>
-
-
-
-
 
 
 <?php include('partials/footer.php'); ?>

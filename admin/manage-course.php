@@ -1,9 +1,12 @@
 <?php include('partials/menu.php'); ?>
 
-        <!-- Main Content Section --> 
-        <div class="main-content">
-            <div class="wrapper">
-                <h1>Manage Course</h1>
+<div class="content">
+    <div class="content-2">
+        <div class="data-table">
+            <div class="title">
+                <h2>Manage course</h2>
+                <a href="<?php echo SITEURL; ?>admin/add-course.php" class="btn">Add Course</a>
+            </div>
 
                 <br><br>
                 <?php
@@ -46,10 +49,8 @@
                 ?>
                 <br><br>
 
-                <a href="<?php echo SITEURL; ?>admin/add-course.php" class="btn-primary">Add course</a>
-                <br><br>
 
-                <table class="tbl-full">
+                <table>
                     <tr>
                         <th>S. N.</th>
                         <th>Title</th>
@@ -129,8 +130,8 @@
                                 </td>
                                 <td><?php echo $active; ?></td>
                                 <td>
-                                    <a href="<?php echo SITEURL; ?>admin/update-course.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-secondary">Update Course</a>
-                                    <a href="<?php echo SITEURL; ?>admin/delete-course.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Course</a>
+                                    <a href="<?php echo SITEURL; ?>admin/update-course.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn btn-secondary">Update</a><br><br>
+                                    <a href="<?php echo SITEURL; ?>admin/delete-course.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             <?php
@@ -148,8 +149,9 @@
 
                 </table>
                
-                <div class="clearfix"></div>
             </div>
         </div>
+    </div>
+</div>
 
 <?php include('partials/footer.php'); ?>

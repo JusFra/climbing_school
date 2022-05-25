@@ -1,9 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Course</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Add course</h2>
+            </div>
 
         <?php
             if(isset($_SESSION['upload']))
@@ -16,37 +18,37 @@
 
         <form action="" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title: </td>
-                    <td><input type="text" name="title"></td>
+                    <td><input type="text" name="title" class="input-field"></td>
                 </tr> 
                 <tr>
                     <td>Start date: </td>
-                    <td><input type="date" name="date_start"></td>
+                    <td><input type="date" name="date_start" class="input-field"></td>
                 </tr> 
                 <tr>
                     <td>End date: </td>
-                    <td><input type="date" name="date_end"></td>
+                    <td><input type="date" name="date_end" class="input-field"></td>
                 </tr> 
                 <tr>
                     <td>Description: </td>
                     <td>
-                        <textarea name="description" cols="30" rows="5"></textarea>
+                        <textarea name="description" class="input-field-area"></textarea>
                     </td>
                 </tr> 
                 <tr>
                     <td>Price: </td>
-                    <td><input type="number" name="price"></td>
+                    <td><input type="number" name="price" class="input-field"></td>
                 </tr>  
                 <tr>
                     <td>Select Image: </td>
-                    <td><input type="file" name="image"></td>
+                    <td><input type="file" name="image" class="input-field-file"></td>
                 </tr>
                 <tr>
                     <td>Category</td>
                     <td>
-                        <select name="category">
+                        <select name="category" class="input-field">
 
                             <?php
                                 $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
@@ -85,7 +87,7 @@
                 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Course" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Course" class="input-field btn btn-primary">
                     </td>
                 </tr>
             </table>

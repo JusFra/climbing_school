@@ -1,9 +1,11 @@
 <?php include('partials/menu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Update Category</h1>
-        <br><br>
+<div class="content">
+    <div class="content-2">
+        <div class="form-table">
+            <div class="title">
+                <h2>Update Category</h2>
+            </div>
 
         <?php
 
@@ -37,10 +39,10 @@
 
         <form action="" method="POST" enctype="multipart/form-data">
 
-            <table class="tbl-30">
+            <table>
                 <tr>
                     <td>Title: </td>
-                    <td><input type="text" name="title" value="<?php echo $title; ?>"></td>
+                    <td><input type="text" name="title" value="<?php echo $title; ?>" class="input-field"></td>
                 </tr>    
                 <tr>
                     <td>Current Image: </td>
@@ -63,7 +65,7 @@
                 <tr>
                     <td>New Image: </td>
                     <td>
-                        <input type="file" name="image">
+                        <input type="file" name="image" class="input-field-file">
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +80,7 @@
                     <td colspan="2">
                         <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Category" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Category" class="input-field btn btn-primary">
                     </td>
                 </tr>
             </table>
@@ -158,7 +160,7 @@
             }
 
         ?>
-
+        </div>
     </div>
 </div>
 
