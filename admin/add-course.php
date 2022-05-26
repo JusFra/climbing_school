@@ -158,12 +158,14 @@
         if($res2==true)
         {
             $_SESSION['add'] = "<div class='success'>Course added successfully.</div>";
-            header('location:'.SITEURL.'/admin/manage-course.php');
+            //header('location:'.SITEURL.'/admin/manage-course.php');
+            echo("<script>location.href = '".SITEURL."admin/manage-course.php';</script>");
         }
         else
         {
             $_SESSION['add'] = "<div class='error'>Failed to add course.</div>";
-            header('location:'.SITEURL.'/admin/manage-course.php');
+            //header('location:'.SITEURL.'/admin/manage-course.php');
+            echo("<script>location.href = '".SITEURL."admin/manage-course.php';</script>");
         }
     }
 

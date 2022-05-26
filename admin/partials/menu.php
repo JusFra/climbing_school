@@ -25,6 +25,7 @@
             <li><a href="manage-category.php"><img src="../images/pickaxe.png" alt="">&nbsp; <span>CATEGORIES</span></a></li>
             <li><a href="manage-course.php"><img src="../images/carabiner.png" alt="">&nbsp; <span>COURSES</span></a></li>
             <li><a href="manage-reservation.php"><img src="../images/diary.png" alt="">&nbsp; <span>RESERVATIONS</span></a></li>
+            <li><a href="<?php echo SITEURL; ?>"><img src="../images/web.png" alt="">&nbsp; <span>WEBSITE</span></a></li>
         </ul>
     </div>
     <div class="container">

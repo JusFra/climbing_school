@@ -21,7 +21,7 @@
     <section class="course-search text-center">
         <div class="container">
             
-            <h2>Courses on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
+            <h2>Courses on <a href="#" class="text-search">"<?php echo $category_title; ?>"</a></h2>
 
         </div>
     </section>

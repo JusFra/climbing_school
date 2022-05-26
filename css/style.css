@@ -2,7 +2,7 @@
 *{
     margin: 0 0;
     padding: 0 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .container{
     width: 80%;
@@ -13,7 +13,7 @@
     width: 100%;
 }
 .img-curve{
-    border-radius: 15px;
+    border-radius: 10px;
 }
 .text-right{
     text-align: right;
@@ -28,17 +28,25 @@
     color: white;
     text-shadow: black 0.1em 0.1em 0.2em
 }
+.text-search{
+    color: #382C1A;
+    font-size: 1.8rem;
+    margin-bottom: 2%;
+}
 .clearfix{
     clear: both;
     float: none;
 }
 a{
-    color: #119e3a;
+    color: #544227;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 a:hover{
-    color: #097929;
+    color: #AD8A50;
+}
+.footer .p, .footer a {
+    font-size: 1rem;
 }
 .btn{
     padding: 1%;
@@ -47,16 +55,16 @@ a:hover{
     border-radius: 5px;
 }
 .btn-primary{
-    background-color: #e5fbec;
-    color: #119e3a;
+    background-color: #F6EDDF;
+    color: #544227;
     cursor: pointer;
 }
 .btn-primary:hover{
     color: white;
-    background-color: #097929;
+    background-color: #544227;
 }
 h2{
-    color: #2f3542;
+    color: #544227;
     font-size: 2rem;
     margin-bottom: 2%;
 }
@@ -108,7 +116,7 @@ fieldset{
 /* CSS for Course search section */
 
 .course-search{
-    background-image: url(../images/bg2.jpg);
+    background-image: url(../images/tlo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -134,7 +142,7 @@ fieldset{
 
 /* CSS for course Menu */
 .course-menu{
-    background-color: rgb(229, 247, 233);
+    background-color: #F6EDDF;
     padding: 4% 0;
 }
 .course-menu-box{

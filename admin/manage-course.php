@@ -4,12 +4,12 @@
     <div class="content-2">
         <div class="data-table">
             <div class="title">
-                <h2>Manage course</h2>
+                <h2>Manage Course</h2>
                 <a href="<?php echo SITEURL; ?>admin/add-course.php" class="btn">Add Course</a>
             </div>
 
-                <br><br>
-                <?php
+            <br><br>
+            <?php
                     if(isset($_SESSION['add']))
                     {
                         echo $_SESSION['add'];
@@ -45,25 +45,22 @@
                         echo $_SESSION['no-course-found'];
                         unset($_SESSION['no-course-found']);
                     }
+            ?>
 
-                ?>
-                <br><br>
-
-
-                <table>
-                    <tr>
-                        <th>S. N.</th>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Image</th>
-                        <th>Category</th>
-                        <th>Active</th>
-                        <th>Actions</th>
-                    </tr>
-
-                    <?php
+            <table>
+                <tr>
+                    <th>S. N.</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Active</th>
+                    <th>Actions</th>
+                </tr>    
+        
+                <?php
                         $sql = "SELECT * FROM tbl_course";
                         $res = mysqli_query($conn, $sql);
 
@@ -145,11 +142,9 @@
                                 </tr>
                             <?php
                         }
-                    ?>
+                ?>
 
-                </table>
-               
-            </div>
+            </table>  
         </div>
     </div>
 </div>
