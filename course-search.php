@@ -5,7 +5,7 @@
         <div class="container">
 
             <?php
-                $search = $_POST['search'];
+                $search = mysqli_real_escape_string($conn, $_POST['search']);
             ?>
             
             <h2>Course on Your Search <a href="#" class="text-search">"<?php echo $search; ?>"</a></h2>

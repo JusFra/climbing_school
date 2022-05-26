@@ -98,11 +98,11 @@
 <?php
     if(isset($_POST['submit']))
     {
-        $title = $_POST['title'];
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
         $date_start = $_POST['date_start'];
         $date_end = $_POST['date_end'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
+        $description = mysqli_real_escape_string($conn, $_POST['description']);
+        $price = mysqli_real_escape_string($conn, $_POST['price']);
         $category = $_POST['category'];
 
         if(isset($_POST['active']))

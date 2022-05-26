@@ -57,11 +57,11 @@
     if(isset($_POST['submit']))
     {
         // Button clicked
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = md5($_POST['password']);  
-        $license = $_POST['license'];
-        $valid = $_POST['valid'];
+        $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $password = mysqli_real_escape_string($conn, md5($_POST['password']));  
+        $license = mysqli_real_escape_string($conn, $_POST['license']);
+        $valid = mysqli_real_escape_string($conn, $_POST['valid']);
         
         $sql = "INSERT INTO tbl_admin SET 
             full_name = '$full_name',

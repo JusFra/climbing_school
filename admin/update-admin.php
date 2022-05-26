@@ -73,9 +73,9 @@
     {
         //Get all the values from form to update
         $id = $_POST['id'];
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $license = $_POST['license'];
+        $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $license = mysqli_real_escape_string($conn, $_POST['license']);
         $valid = $_POST['valid'];
 
         $sql = "UPDATE tbl_admin SET

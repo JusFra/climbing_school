@@ -44,9 +44,9 @@
     if(isset($_POST['submit']))
     {
         $id=$_POST['id'];
-        $current_password = md5($_POST['current_password']);
-        $new_password = md5($_POST['new_password']);
-        $confirm_password = md5($_POST['confirm_password']);
+        $current_password = mysqli_real_escape_string($conn, md5($_POST['current_password']));
+        $new_password = mysqli_real_escape_string($conn, md5($_POST['new_password']));
+        $confirm_password = mysqli_real_escape_string($conn, md5($_POST['confirm_password']));
 
         $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password='$current_password'";
         $res = mysqli_query($conn, $sql);

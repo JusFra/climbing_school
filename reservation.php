@@ -73,13 +73,13 @@
                 <fieldset>
                     <legend>Delivery Details</legend>
                     <div class="order-label">Full Name</div>
-                    <input type="text" name="full-name" placeholder="E.g. Vijay Thapa" class="input-responsive" required>
+                    <input type="text" name="full-name" placeholder="E.g. Jan Nowak" class="input-responsive" required>
 
                     <div class="order-label">Phone Number</div>
-                    <input type="tel" name="contact" placeholder="E.g. 9843xxxxxx" class="input-responsive" required>
+                    <input type="tel" name="contact" placeholder="E.g. 123 123 123" class="input-responsive" required>
 
                     <div class="order-label">Email</div>
-                    <input type="email" name="email" placeholder="E.g. hi@vijaythapa.com" class="input-responsive" required>
+                    <input type="email" name="email" placeholder="E.g. nowak@gmail.com" class="input-responsive" required>
 
                     <div class="order-label">Climbing equipment hire (harness, helmet, boots): + 120 zł</div>
                     <input type="radio" name="equipment" value="Yes">Yes
@@ -119,9 +119,9 @@
                     $order_date = date("Y-m-d h:i:sa");
                     $status = "Ordered";
 
-                    $customer_name = $_POST['full-name'];
-                    $customer_contact = $_POST['contact'];
-                    $customer_email = $_POST['email'];
+                    $customer_name = mysqli_real_escape_string($conn, $_POST['full-name']);
+                    $customer_contact = mysqli_real_escape_string($conn, $_POST['contact'];)
+                    $customer_email = mysqli_real_escape_string($conn, $_POST['email']);
 
                     $sql2 = "INSERT INTO tbl_order SET
                         course_name='$course_name',
