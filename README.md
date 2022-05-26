@@ -25,5 +25,5 @@ In the following tabs we can see admins, categories, courses and reservations. W
 ![App Screenshot](https://github.com/Justyna96-prog/climbing_school/blob/main/screenshots/manage-admin.png)
 ![App Screenshot](https://github.com/Justyna96-prog/climbing_school/blob/main/screenshots/manage-course.png)
 ![App Screenshot](https://github.com/Justyna96-prog/climbing_school/blob/main/screenshots/manage-reservations.png)
-![App Screenshot](https://github.com/Justyna96-prog/climbing_school/blob/main/screenshots/update-reservations.png)
+![App Screenshot](https://github.com/Justyna96-prog/climbing_school/blob/main/screenshots/update-reservation.png)
 ![App Screenshot](https://github.com/Justyna96-prog/climbing_school/blob/main/screenshots/add-course.png)
